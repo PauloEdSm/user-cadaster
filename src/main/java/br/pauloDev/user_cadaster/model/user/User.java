@@ -1,10 +1,21 @@
 package br.pauloDev.user_cadaster.model.user;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-public class User extends AbstractEntity{
+@Table(name = "tb_user_cadaster")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    Long id;
 
     @Column(name = "name")
     private String name;
@@ -15,6 +26,6 @@ public class User extends AbstractEntity{
     @Column(name = "phoneNumber")
     private String phoneNumber;
 
-    @Column (name = "email")
+    @Column(name = "email")
     private String email;
 }
