@@ -18,26 +18,20 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    Long id;
+    Long task_id;
 
     private List<Task> taskList;
 
-    @Column(name = "name")
-    private String name;
+    private String user_name;
 
-    @Column(name = "age")
     private int age;
 
-    @Column(name = "phoneNumber")
     private String phoneNumber;
 
-    @Column(name = "email")
     private String email;
 
     @ManyToOne
     @JoinColumn(name = "task_id")
-    @Column (name = "task")
-    private Task task;
+    private Task entity_task;
 
 }

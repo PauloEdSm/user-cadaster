@@ -18,13 +18,10 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id")
-    private Long id;
+    private Long taskId;
 
-    @Column(name = "task_name")
     private String taskName;
 
-    @Column(name = "description")
     private String description;
 
     @OneToMany(mappedBy = "task_executor_id")
