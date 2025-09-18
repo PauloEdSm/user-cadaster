@@ -24,7 +24,7 @@ public class Task {
 
     private String description;
 
-    @OneToMany(mappedBy = "task_executor_id")
+    @OneToMany(mappedBy = "entityTask")
     private List <User> taskExecutorId;
 
 }

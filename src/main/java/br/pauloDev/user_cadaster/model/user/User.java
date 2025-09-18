@@ -18,11 +18,9 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long task_id;
+   private Long userId;
 
-    private List<Task> taskList;
-
-    private String user_name;
+    private String userName;
 
     private int age;
 
@@ -32,6 +30,6 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "task_id")
-    private Task entity_task;
+    private Task entityTask;
 
 }
