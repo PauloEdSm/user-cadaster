@@ -2,6 +2,7 @@ package br.pauloDev.user_cadaster.model.task;
 
 import br.pauloDev.user_cadaster.model.user.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
