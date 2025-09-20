@@ -1,6 +1,6 @@
 package br.pauloDev.user_cadaster.controller.task;
 
-import br.pauloDev.user_cadaster.model.CustomErrorType;
+import br.pauloDev.user_cadaster.error.CustomErrorType;
 import br.pauloDev.user_cadaster.model.task.Task;
 import br.pauloDev.user_cadaster.service.task.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,8 @@ public class TaskController {
     public ResponseEntity<?> searchTaskById(@PathVariable ("id") Long id) {
         Optional<Task> task = service.findById(id);
         if (task.isEmpty())
-            return (new ResponseEntity<>(new CustomErrorType("Id not exist!"),HttpStatus.BAD_REQUEST));
-        return (new ResponseEntity<>(task,HttpStatus.OK));
+            return (new ResponseEntity<>(new CustomErrorType("Id not exist!"),HttpStatus.NOT_FOUND));
+        return (new ResponseEntity<>(task.get(),HttpStatus.OK));
     }
 
 

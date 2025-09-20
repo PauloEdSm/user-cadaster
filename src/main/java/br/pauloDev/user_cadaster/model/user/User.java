@@ -1,18 +1,16 @@
 package br.pauloDev.user_cadaster.model.user;
 
 import br.pauloDev.user_cadaster.model.task.Task;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Setter
-@Getter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
 @Table(name = "tb_user_cadaster")
 public class User {
 
@@ -30,6 +28,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "task_id")
+    @JsonBackReference
     private Task entityTask;
 
 }

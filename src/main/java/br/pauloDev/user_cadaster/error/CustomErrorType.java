@@ -1,4 +1,4 @@
-package br.pauloDev.user_cadaster.model;
+package br.pauloDev.user_cadaster.error;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

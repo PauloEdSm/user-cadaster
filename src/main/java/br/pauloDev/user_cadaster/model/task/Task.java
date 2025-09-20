@@ -1,18 +1,17 @@
 package br.pauloDev.user_cadaster.model.task;
 
 import br.pauloDev.user_cadaster.model.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Setter
-@Getter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
 @Table(name = "db_task_list")
 public class Task {
 
@@ -25,6 +24,7 @@ public class Task {
     private String description;
 
     @OneToMany(mappedBy = "entityTask")
+    @JsonManagedReference
     private List <User> taskExecutorId;
 
 }
